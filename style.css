@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* primary colors */
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    /* neutral colors */
+    --Very-dark-blue : hsl(217, 54%, 11%);
+    --Very-dark-blue-card: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+html{
+    font-size: 100%;
+}
+a{
+    text-decoration: none;
+    color: var(--White);
+    transition: color .3s ease;
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+body{
+    font-size: 1.125rem;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--Very-dark-blue);
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh
+}
+main .container{
+    max-width:21.875rem;
+    height: auto;
+    border-radius: 0.938rem;
+    padding: 1.56rem;
+    position: relative;
+    background-color: var(--Very-dark-blue-card);
+    position: relative;
+    margin: 1.25rem;
+}
+
+main .image{
+    position: relative;  
+    width: 18.75rem;
+    height: 18.75rem;
+    overflow: hidden;
+    display: block;
+}
+.container .image>img{
+    border-radius: 10px;
+}
+.container .image::before{
+    content: url(images/icon-view.svg);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(178deg 100% 50% / 60%);
+    width: 100%;
+    height: 100%;
+    border-radius:0.625rem ;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .3s;
+}
+.container .image:hover::before{
+    opacity: 1;
+}
+
+.container .title {
+    margin: 1.4375rem 0 0.9375rem;
+}
+.container .title a {
+    display: block;
+    font-size: 1.4375rem;
+    color: var(--White);
+    font-weight: 600;
+    transition: color .3s;
+}
+.container .title a:hover{
+    color: var(--Cyan);
+}
+.container p{
+    font-size: 1.125rem;
+    color: var(--Soft-blue);
+    font-weight: 400;
+}
+.container .info{
+    margin: 1.4375rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.938rem;
+}
+.container .info>li {
+    display: flex;
+    align-items: center;
+}
+.container .eth p{
+    margin-left: 0.438rem;
+    color: var(--Cyan);
+}
+.container .time p{
+    margin-left: 0.438rem;
+    color: var(--Soft-blue);
+}
+
+.container .char{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 1px solid var(--Very-dark-blue-line);
+    padding-top: 1.25rem;
+    margin-bottom: 0.625rem;
+}
+.container .char img{
+    max-width: 2.18rem;
+    max-height: 2.18rem;
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.container .char .name{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.container .char figcaption p{
+    display: inline;
+    color: var(--Soft-blue);
+}
+.container .char .name:hover{
+    color: var(--Cyan);
+}
+.attribution { 
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.875rem; 
+    line-height: 1.6;
+    text-align: center; 
+    color: var(--White);
+    width: 100%;
+}
+.attribution a { 
+    color: var(--Soft-blue);
+}
+.attribution a:hover{
+    color: var(--Cyan);
+    transition: color .3s;
+}
+@media screen and (max-width: 87.5rem){
+    body {
+        font-size: 0.94rem;
+    }
+    .attribution{
+        display: none;
+    }
+}
